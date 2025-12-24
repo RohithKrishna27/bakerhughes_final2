@@ -4,8 +4,7 @@ A Python-based tool that automatically extracts chemical composition data from P
 
 📋 **Visual Diagrams:**
 - **SVG Diagram**: `workflow_diagram.svg` - View in browser or import to Visio
-- **Visio Import**: See [VISIO_IMPORT_GUIDE.md](VISIO_IMPORT_GUIDE.md) for importing to Visio (.vsdx)
-- **Detailed Architecture**: See [ARCHITECTURE.md](ARCHITECTURE.md) for complete system architecture
+
 
 ## Features
 
