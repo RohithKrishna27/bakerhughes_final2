@@ -19,8 +19,6 @@ A Python-based tool that automatically extracts chemical composition data from P
 
 ## Supported Element Symbols
 
-The system recognizes 29+ chemical elements including:
-**C, Si, Mn, P, S, Cr, Ni, Mo, Cu, W, Ti, V, Al, Fe, Nb, Ta, Zr, Sn, Pb, Bi, Zn, Mg, Ca, B, Be, Co, Y, H, N, O** and more.
 
 ## System Requirements
 
