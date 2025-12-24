@@ -1,0 +1,26 @@
+# PDF Chemical Composition Table Extractor - Requirements
+
+# PDF processing
+PyMuPDF>=1.23.0
+
+# Image processing
+Pillow>=10.0.0
+opencv-python>=4.8.0
+
+# OCR
+pytesseract>=0.3.10
+
+# Data processing
+pandas>=2.0.0
+
+# Note: Tesseract OCR engine must be installed separately
+# Windows: Download from https://github.com/UB-Mannheim/tesseract/wiki
+# Mac: brew install tesseract
+# Linux: sudo apt-get install tesseract-ocr
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+2025-12-25 02:57:51 - pdf_extractor - INFO - ============================================================
+2025-12-25 02:57:51 - pdf_extractor - INFO - Chemical Composition Table Extractor
+2025-12-25 02:57:51 - pdf_extractor - INFO - ============================================================
+2025-12-25 02:57:51 - pdf_extractor - INFO - Input PDF: data/input/matcert _AM_ 8_31_04157.pdf
+2025-12-25 02:57:51 - pdf_extractor - INFO - Output CSV: data/output/test_output.csv
+2025-12-25 02:57:51 - pdf_extractor - INFO - DPI: 300
+2025-12-25 02:57:51 - pdf_extractor - INFO - Step 1: Loading images...
+2025-12-25 02:57:51 - pdf_extractor - INFO - Loaded 2 image(s)
+2025-12-25 02:57:51 - pdf_extractor - INFO - 
+Processing page 1/2...
+2025-12-25 02:57:51 - pdf_extractor - INFO - Preprocessing image...

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="1600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="#f5f5f5"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    PDF Chemical Composition Extractor - Workflow Diagram
+  </text>
+  
+  <!-- Step 0: Input -->
+  <rect x="400" y="80" width="400" height="80" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="600" y="120" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    PDF INPUT
+  </text>
+  <text x="600" y="145" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+    Chemical Composition Table
+  </text>
+  <path d="M 600 160 L 600 200" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 1: PDF to Image -->
+  <rect x="400" y="200" width="400" height="120" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="600" y="235" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    STEP 1: PDF to Image Conversion
+  </text>
+  <text x="600" y="260" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    pdf_io.py
+  </text>
+  <text x="600" y="285" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    • Extract pages • Convert to images (300 DPI)
+  </text>
+  <text x="600" y="305" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    Output: PIL Image objects
+  </text>
+  <path d="M 600 320 L 600 360" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 2: Preprocessing -->
+  <rect x="400" y="360" width="400" height="120" rx="10" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
+  <text x="600" y="395" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    STEP 2: Image Preprocessing
+  </text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    preprocessing.py
+  </text>
+  <text x="600" y="445" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    • Grayscale • Denoise • Enhance contrast
+  </text>
+  <text x="600" y="465" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    Improve OCR accuracy
+  </text>
+  <path d="M 600 480 L 600 520" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 3: OCR -->
+  <rect x="400" y="520" width="400" height="120" rx="10" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="600" y="555" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    STEP 3: Optical Character Recognition
+  </text>
+  <text x="600" y="580" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    ocr.py (Tesseract)
+  </text>
+  <text x="600" y="605" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    • Extract text with bounding boxes • Coordinates
+  </text>
+  <text x="600" y="625" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    Output: [{text, left, top, width, height, conf}]
+  </text>
+  <path d="M 600 640 L 600 680" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 4: Table Detection -->
+  <rect x="400" y="680" width="400" height="120" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="600" y="715" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    STEP 4: Table Structure Detection
+  </text>
+  <text x="600" y="740" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    table_detect.py
+  </text>
+  <text x="600" y="765" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    • Group by rows/columns • Merge cells
+  </text>
+  <text x="600" y="785" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    Output: 2D table structure
+  </text>
+  <path d="M 600 800 L 600 840" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 5: Validation -->
+  <rect x="400" y="840" width="400" height="100" rx="10" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="600" y="875" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    STEP 5: Chemical Table Validation
+  </text>
+  <text x="600" y="900" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    table_detect.py
+  </text>
+  <text x="600" y="925" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    • Check keywords • Verify elements • Validate structure
+  </text>
+  <path d="M 600 940 L 600 980" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 6: Parsing -->
+  <rect x="250" y="980" width="700" height="180" rx="10" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="600" y="1015" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    STEP 6: Data Parsing &amp; Extraction
+  </text>
+  <text x="600" y="1040" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    parsing.py
+  </text>
+  <text x="350" y="1070" font-family="Arial, sans-serif" font-size="11" text-anchor="start" fill="white">
+    Strategy 1: Column-based (Element → Value)
+  </text>
+  <text x="350" y="1090" font-family="Arial, sans-serif" font-size="11" text-anchor="start" fill="white">
+    Strategy 2: Cell-based (Element + Value in same cell)
+  </text>
+  <text x="350" y="1110" font-family="Arial, sans-serif" font-size="11" text-anchor="start" fill="white">
+    Strategy 3: Header-based (Headers = Elements)
+  </text>
+  <text x="350" y="1130" font-family="Arial, sans-serif" font-size="11" text-anchor="start" fill="white">
+    Features: OCR correction • Number normalization • Value validation
+  </text>
+  <path d="M 600 1160 L 600 1200" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 7: Export -->
+  <rect x="400" y="1200" width="400" height="100" rx="10" fill="#34495e" stroke="#2c3e50" stroke-width="2"/>
+  <text x="600" y="1235" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    STEP 7: CSV Export
+  </text>
+  <text x="600" y="1260" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    export.py
+  </text>
+  <text x="600" y="1285" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+    Format: element_symbol, value, unit
+  </text>
+  <path d="M 600 1300 L 600 1340" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 8: Output -->
+  <rect x="400" y="1340" width="400" height="120" rx="10" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="600" y="1375" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    CSV OUTPUT
+  </text>
+  <text x="600" y="1405" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    element_symbol,value,unit
+  </text>
+  <text x="600" y="1425" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    C,0.05,wt.%
+  </text>
+  <text x="600" y="1445" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    Si,0.34,wt.%
+  </text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#34495e"/>
+    </marker>
+  </defs>
+  
+  <!-- Side notes -->
+  <rect x="50" y="520" width="280" height="120" rx="5" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="190" y="545" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    OCR Technology
+  </text>
+  <text x="60" y="570" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#34495e">
+    • Uses Tesseract OCR
+  </text>
+  <text x="60" y="590" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#34495e">
+    • Handles multiple languages
+  </text>
+  <text x="60" y="610" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#34495e">
+    • Confidence scoring
+  </text>
+  <text x="60" y="630" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#34495e">
+    • Bounding box coordinates
+  </text>
+  
+  <rect x="870" y="980" width="280" height="180" rx="5" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="1010" y="1005" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Supported Elements
+  </text>
+  <text x="880" y="1030" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#34495e">
+    29+ elements including:
+  </text>
+  <text x="880" y="1050" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#34495e">
+    C, Si, Mn, P, S, Cr, Ni
+  </text>
+  <text x="880" y="1070" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#34495e">
+    Mo, Cu, W, Ti, V, Al, Fe
+  </text>
+  <text x="880" y="1090" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#34495e">
+    Nb, Ta, Zr, Sn, Pb, Bi...
+  </text>
+  <text x="880" y="1110" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#34495e">
+    And more!
+  </text>
+  
+</svg>
+
