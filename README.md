@@ -83,28 +83,7 @@ This will install:
 **Using the main script directly:**
 ```bash
 python src/main.py --input "data/input/material.pdf" --output "data/output/composition.csv"
-```
-
-**With additional options:**
-```bash
-python src/main.py \
-  --input "data/input/material.pdf" \
-  --output "data/output/composition.csv" \
-  --dpi 300 \
-  --lang eng \
-  --log "data/output/extraction.log"
-```
-
-### Command-Line Arguments
-
-| Argument | Short | Description | Default |
-|----------|-------|-------------|---------|
-| `--input` | `-i` | Path to input PDF file | Required |
-| `--output` | `-o` | Path to output CSV file | `output.csv` |
-| `--dpi` | | DPI for PDF to image conversion | `300` |
-| `--lang` | | OCR language code | `eng` |
-| `--log` | | Path to log file (optional) | None |
-| `--report` | | Path to summary report file (optional) | None |
+`
 
 ## Output Format
 
@@ -183,17 +162,6 @@ The system automatically handles common OCR errors:
 - Check if table contains recognized element symbols
 - Review log file for detailed error messages
 
-### Incorrect Values
-
-OCR accuracy depends on:
-- Image quality and resolution
-- Font clarity and size
-- Table structure complexity
-
-**Recommendations**:
-- Use high-quality PDFs (scanned at 300+ DPI)
-- Ensure good contrast and clear text
-- Some manual verification may be needed for critical data
 
 ## Project Structure
 
